@@ -1,5 +1,11 @@
 # small-spring
 
+### Step
+
+**step-1**: simple_bean_container
+
+**step-2**: bean_instantiation
+
 ### Ref
 
 * https://www.zybuluo.com/dugu9sword/note/382745
