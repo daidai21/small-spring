@@ -1,8 +1,14 @@
 package org.spring.small;
 
 public class HelloWorldService {
-    public String sayHello() {
-        System.out.println("HelloWorld");
-        return "HelloWorld";
+
+    private String text;
+
+    public void helloWorld() {
+        System.out.println(text);
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 }
