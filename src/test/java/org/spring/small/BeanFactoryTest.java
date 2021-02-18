@@ -3,26 +3,25 @@ package org.spring.small;
 import org.junit.Test;
 import org.spring.small.factory.AutowireCapableBeanFactory;
 import org.spring.small.factory.BeanFactory;
+import org.spring.small.io.ResourceLoader;
+import org.spring.small.xml.XmlBeanDefinitionReader;
+
+import java.util.Map;
 
 public class BeanFactoryTest {
     @Test
-    public void test() throws InstantiationException, IllegalAccessException, NoSuchFieldException {
-        // 1.初始化beanfactory
+    public void test() throws Exception {
+        // 1.读取配置
+        XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(new ResourceLoader());
+        xmlBeanDefinitionReader.loadBeanDefinitions("small-ioc.xml");
+
+        // 2.初始化BeanFactory并注册bean
         BeanFactory beanFactory = new AutowireCapableBeanFactory();
+        for (Map.Entry<String, BeanDefinition> beanDefinitionEntry : xmlBeanDefinitionReader.getRegistry().entrySet()) {
+            beanFactory.registerBeanDefinition(beanDefinitionEntry.getKey(), beanDefinitionEntry.getValue());
+        }
 
-        // 2.注入bean
-        BeanDefinition beanDefinition = new BeanDefinition();
-        beanDefinition.setBeanClassName("org.spring.small.HelloWorldService");
-
-        // 3.设置属性
-        PropertyValues propertyValues = new PropertyValues();
-        propertyValues.addPropertyValue(new PropertyValue("text", "Hello World!"));
-        beanDefinition.setPropertyValues(propertyValues);
-
-        // 4.生成bean
-        beanFactory.registerBeanDefinition("HelloWorldService", beanDefinition);
-
-        // 5.获取bean
+        // 3.获取bean
         HelloWorldService helloWorldService = (HelloWorldService) beanFactory.getBean("HelloWorldService");
         helloWorldService.helloWorld();
     }
