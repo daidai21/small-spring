@@ -10,6 +10,10 @@
 
 **step-4**: config_beanfactory_with_xml
 
+**step-5**: inject_bean_to_bean
+
+**step-6**: invite_application_context
+
 ### Ref
 
 * [tiny-spring 分析](https://www.zybuluo.com/dugu9sword/note/382745)
