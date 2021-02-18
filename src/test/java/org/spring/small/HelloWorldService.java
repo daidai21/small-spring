@@ -1,14 +1,16 @@
 package org.spring.small;
 
+import lombok.Setter;
+
 public class HelloWorldService {
 
+    @Setter
     private String text;
 
-    public void helloWorld() {
-        System.out.println(text);
-    }
+    @Setter
+    private OutputService outputService;
 
-    public void setText(String text) {
-        this.text = text;
+    public void helloWorld() {
+        outputService.output(text);
     }
 }

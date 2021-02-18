@@ -1,37 +1,29 @@
 package org.spring.small;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public class BeanDefinition {
+
+    @Setter
+    @Getter
     private Object bean;
 
+    @Getter
+    @Setter
     private Class beanClass;
 
+    @Getter
     private String beanClassName;
 
+    @Setter
+    @Getter
     private PropertyValues propertyValues;
 
     public BeanDefinition() {
         this.propertyValues = new PropertyValues();
     }
 
-    public Object getBean() {
-        return bean;
-    }
-
-    public void setBean(Object bean) {
-        this.bean = bean;
-    }
-
-    public Class getBeanClass() {
-        return beanClass;
-    }
-
-    public void setBeanClass(Class beanClass) {
-        this.beanClass = beanClass;
-    }
-
-    public String getBeanClassName() {
-        return beanClassName;
-    }
 
     public void setBeanClassName(String beanClassName) {
         this.beanClassName = beanClassName;
@@ -40,13 +32,5 @@ public class BeanDefinition {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-    }
-
-    public void setPropertyValues(PropertyValues propertyValues) {
-        this.propertyValues = propertyValues;
-    }
-
-    public PropertyValues getPropertyValues() {
-        return propertyValues;
     }
 }

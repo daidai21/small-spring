@@ -1,14 +1,16 @@
 package org.spring.small.factory;
 
 import org.spring.small.BeanDefinition;
+import org.spring.small.BeanReference;
 import org.spring.small.PropertyValue;
 
 import java.lang.reflect.Field;
 
 public class AutowireCapableBeanFactory extends AbstractBeanFactory {
     @Override
-    protected Object doCreateBean(BeanDefinition beanDefinition) throws InstantiationException, IllegalAccessException, NoSuchFieldException {
+    protected Object doCreateBean(BeanDefinition beanDefinition) throws Exception {
         Object bean = createBeanInstance(beanDefinition);
+        beanDefinition.setBean(bean);
         applyPropertyValues(bean, beanDefinition);
         return bean;
     }
@@ -17,11 +19,17 @@ public class AutowireCapableBeanFactory extends AbstractBeanFactory {
         return beanDefinition.getBeanClass().newInstance();
     }
 
-    protected void applyPropertyValues(Object bean, BeanDefinition beanDefinition) throws NoSuchFieldException, IllegalAccessException {
+    protected void applyPropertyValues(Object bean, BeanDefinition beanDefinition) throws Exception {
         for (PropertyValue propertyValue : beanDefinition.getPropertyValues().getPropertyValues()) {
             Field declaredField = bean.getClass().getDeclaredField(propertyValue.getName());
             declaredField.setAccessible(true);
-            declaredField.set(bean, propertyValue.getValue());
+            Object value = propertyValue.getValue();
+            if (value instanceof BeanReference) {
+                BeanReference beanReference = (BeanReference) value;
+                value = getBean(beanReference.getName());
+            }
+            declaredField.set(bean, value);
         }
+
     }
 }

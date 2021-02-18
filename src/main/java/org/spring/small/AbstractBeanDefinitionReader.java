@@ -1,6 +1,6 @@
 package org.spring.small;
 
-import jdk.nashorn.internal.objects.annotations.Getter;
+import lombok.Getter;
 import org.spring.small.io.Resource;
 import org.spring.small.io.ResourceLoader;
 
@@ -9,20 +9,14 @@ import java.util.Map;
 
 public abstract class AbstractBeanDefinitionReader implements BeanDefinitionReader {
 
+    @Getter
     private Map<String, BeanDefinition> registry;
 
+    @Getter
     private ResourceLoader resourceLoader;
 
     protected AbstractBeanDefinitionReader(ResourceLoader resourceLoader) {
         this.registry = new HashMap<>();
         this.resourceLoader = resourceLoader;
-    }
-
-    public Map<String, BeanDefinition> getRegistry() {
-        return registry;
-    }
-
-    public ResourceLoader getResourceLoader() {
-        return resourceLoader;
     }
 }
