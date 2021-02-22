@@ -1,8 +1,7 @@
-package org.spring.small.factory;
+package org.spring.small.beans.factory;
 
-import org.spring.small.BeanDefinition;
+import org.spring.small.beans.BeanDefinition;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -28,14 +27,13 @@ public abstract class AbstractBeanFactory implements BeanFactory {
         return bean;
     }
 
-    @Override
     public void registerBeanDefinition(String name, BeanDefinition beanDefinition) throws InstantiationException, IllegalAccessException, NoSuchFieldException {
         beanDefinitionMap.put(name, beanDefinition);
         beanDefinitionNames.add(name);
     }
 
     public void preInstantiateSingletons() throws Exception {
-        for (Iterator it = this.beanDefinitionNames.iterator(); it.hasNext();) {
+        for (Iterator it = this.beanDefinitionNames.iterator(); it.hasNext(); ) {
             String beanName = (String) it.next();
             getBean(beanName);
         }

@@ -1,4 +1,4 @@
-package org.spring.small.io;
+package org.spring.small.beans.io;
 
 import lombok.AllArgsConstructor;
 

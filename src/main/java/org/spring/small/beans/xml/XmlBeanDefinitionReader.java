@@ -1,9 +1,10 @@
-package org.spring.small.xml;
+package org.spring.small.beans.xml;
 
-import org.spring.small.BeanDefinition;
+import org.spring.small.beans.AbstractBeanDefinitionReader;
+import org.spring.small.beans.BeanDefinition;
 import org.spring.small.BeanReference;
-import org.spring.small.PropertyValue;
-import org.spring.small.io.ResourceLoader;
+import org.spring.small.beans.PropertyValue;
+import org.spring.small.beans.io.ResourceLoader;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -14,7 +15,6 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.InputStream;
 
-import org.spring.small.AbstractBeanDefinitionReader;
 
 public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 

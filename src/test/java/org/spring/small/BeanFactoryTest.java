@@ -1,11 +1,11 @@
 package org.spring.small;
 
 import org.junit.Test;
-import org.spring.small.factory.AbstractBeanFactory;
-import org.spring.small.factory.AutowireCapableBeanFactory;
-import org.spring.small.factory.BeanFactory;
-import org.spring.small.io.ResourceLoader;
-import org.spring.small.xml.XmlBeanDefinitionReader;
+import org.spring.small.beans.BeanDefinition;
+import org.spring.small.beans.factory.AbstractBeanFactory;
+import org.spring.small.beans.factory.AutowireCapableBeanFactory;
+import org.spring.small.beans.io.ResourceLoader;
+import org.spring.small.beans.xml.XmlBeanDefinitionReader;
 
 import java.util.Map;
 

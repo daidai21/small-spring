@@ -1,8 +1,8 @@
-package org.spring.small.factory;
+package org.spring.small.beans.factory;
 
-import org.spring.small.BeanDefinition;
 import org.spring.small.BeanReference;
-import org.spring.small.PropertyValue;
+import org.spring.small.beans.BeanDefinition;
+import org.spring.small.beans.PropertyValue;
 
 import java.lang.reflect.Field;
 

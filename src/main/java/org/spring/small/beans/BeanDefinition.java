@@ -1,4 +1,4 @@
-package org.spring.small;
+package org.spring.small.beans;
 
 import lombok.Getter;
 import lombok.Setter;

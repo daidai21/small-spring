@@ -1,8 +1,8 @@
-package org.spring.small;
+package org.spring.small.beans;
 
 import lombok.Getter;
-import org.spring.small.io.Resource;
-import org.spring.small.io.ResourceLoader;
+import org.spring.small.beans.io.Resource;
+import org.spring.small.beans.io.ResourceLoader;
 
 import java.util.HashMap;
 import java.util.Map;
