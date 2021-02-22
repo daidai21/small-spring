@@ -1,4 +1,4 @@
-package org.spring.small;
+package org.spring.small.beans;
 
 import java.util.ArrayList;
 import java.util.List;

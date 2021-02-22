@@ -1,9 +1,10 @@
-package org.spring.small.xml;
+package org.spring.small.beans.xml;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.spring.small.BeanDefinition;
-import org.spring.small.io.ResourceLoader;
+import org.spring.small.beans.BeanDefinition;
+import org.spring.small.beans.io.ResourceLoader;
+import org.spring.small.beans.xml.XmlBeanDefinitionReader;
 
 import java.util.Map;
 
