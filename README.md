@@ -14,6 +14,8 @@
 
 **step-6**: invite_application_context
 
+**step-7**: method_interceptor_by_jdk_dynamic_proxy
+
 ### Ref
 
 * [tiny-spring 分析](https://www.zybuluo.com/dugu9sword/note/382745)
