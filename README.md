@@ -16,6 +16,8 @@
 
 **step-7**: method_interceptor_by_jdk_dynamic_proxy
 
+**step-8**: invite_pointcut_and_aspectj
+
 ### Ref
 
 * [tiny-spring 分析](https://www.zybuluo.com/dugu9sword/note/382745)
