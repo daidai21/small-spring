@@ -29,6 +29,6 @@ public class JdkDynamicAopProxyTest {
         HelloWorldService helloWorldServiceProxy = (HelloWorldService) jdkDynamicAopProxy.getProxy();
 
         // 4. 基于AOP的调用
-        helloWorldService.helloWorld();
+        helloWorldServiceProxy.helloWorld();
     }
 }

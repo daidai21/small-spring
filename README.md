@@ -18,6 +18,8 @@
 
 **step-8**: invite_pointcut_and_aspectj
 
+**step-9**:  auto_create_aop_proxy
+
 ### Ref
 
 * [tiny-spring 分析](https://www.zybuluo.com/dugu9sword/note/382745)
